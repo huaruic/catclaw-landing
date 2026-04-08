@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "features": "Features",
+    "privacy": "Privacy",
+    "openSource": "Open Source",
+    "download": "Download"
+  },
+  "hero": {
+    "badge": "Zero Setup Local AI",
+    "title": "Run AI.",
+    "titleHighlight": "Private",
+    "desc": "CatClaw is a cozy desktop home for local AI agents. No Docker, no complex configs—just download and start chatting with full privacy.",
+    "download": "Download for macOS",
+    "github": "View on GitHub",
+    "tagPrivacy": "Privacy First",
+    "tagSetup": "Zero Setup"
+  },
+  "features": {
+    "heading": "Why Cat",
+    "headingHighlight": "Claw",
+    "sub": "Everything a curious cat needs, built into one cozy app.",
+    "zeroSetup": {
+      "title": "Zero Setup",
+      "desc": "Bundled Node.js and OpenClaw runtime. Download, open, done — no Docker, no terminal gymnastics."
+    },
+    "privacy": {
+      "title": "Privacy First",
+      "desc": "All AI runs on your machine. Your conversations, your models, your data — never phoning home."
+    },
+    "skills": {
+      "title": "Skill Ecosystem",
+      "desc": "Activate skills and agents like toys from a basket. A cozy, cat-friendly UI for serious AI work."
+    }
+  },
+  "privacy": {
+    "heading": "Your Data Stays",
+    "headingHighlight": "Box",
+    "desc": "CatClaw keeps everything local. No middleman servers, no data harvesting — just you and your AI, curled up safely at home.",
+    "point1": "All AI processing happens on your machine",
+    "point2": "No telemetry, no tracking, no cloud calls",
+    "point3": "Open source — inspect every line yourself"
+  },
+  "opensource": {
+    "heading": "Built in the",
+    "headingHighlight": "Open",
+    "desc": "CatClaw is proudly open source. Peek at the code, contribute features, or fork your own cozy corner.",
+    "github": "View on GitHub",
+    "docs": "Read the Docs"
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "andCatnip": "and catnip."
+  }
+}

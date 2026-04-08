@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@import "@fontsource/quicksand";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Quicksand", "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-cat-orange: var(--raw-cat-orange);
+  --color-cat-accent: var(--raw-cat-accent);
+  --color-cat-bg: var(--raw-cat-bg);
+  --color-cat-fg: var(--raw-cat-fg);
+  --color-cat-surface: var(--raw-cat-surface);
+  --color-cat-surface-alt: var(--raw-cat-surface-alt);
+  --color-cat-muted: var(--raw-cat-muted);
+  --color-cat-border: var(--raw-cat-border);
+  --color-cat-shadow-color: var(--raw-cat-shadow);
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 3rem;
+
+  --shadow-cozy: 0 8px 30px var(--color-cat-shadow-color);
+  --shadow-cozy-hover: 0 15px 40px var(--color-cat-shadow-color);
+
+  --animate-tail-sway: tail-sway 3s ease-in-out infinite;
+  --animate-paw-stretch: paw-stretch 4s ease-in-out infinite;
+  --animate-ear-wiggle: ear-wiggle 2.5s ease-in-out infinite;
+}
+
+@layer base {
+  :root {
+    --raw-cat-orange: #F97316;
+    --raw-cat-accent: #FB923C;
+    --raw-cat-bg: #FFF7ED;
+    --raw-cat-fg: #431407;
+    --raw-cat-surface: #ffffff;
+    --raw-cat-surface-alt: #fff7ed;
+    --raw-cat-muted: #78716c;
+    --raw-cat-border: #e7e5e4;
+    --raw-cat-shadow: rgba(249, 115, 22, 0.12);
+  }
+
+  .dark {
+    --raw-cat-bg: hsl(20 6% 10%);
+    --raw-cat-fg: hsl(30 15% 92%);
+    --raw-cat-surface: hsl(20 6% 13%);
+    --raw-cat-surface-alt: hsl(20 6% 14%);
+    --raw-cat-muted: hsl(30 10% 65%);
+    --raw-cat-border: hsl(20 6% 22%);
+    --raw-cat-shadow: rgba(0, 0, 0, 0.3);
+  }
+
+  body {
+    @apply bg-cat-bg text-cat-fg font-sans selection:bg-cat-orange selection:text-white;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='28' viewBox='0 0 24 28'%3E%3Ccircle cx='12' cy='18' r='5' fill='%23F97316'/%3E%3Ccircle cx='6' cy='10' r='3' fill='%23F97316'/%3E%3Ccircle cx='12' cy='5' r='3' fill='%23F97316'/%3E%3Ccircle cx='18' cy='10' r='3' fill='%23F97316'/%3E%3C/svg%3E") 12 18, auto;
+  }
+
+  a, button, [role="button"], input[type="submit"], select, summary, [onclick] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='28' viewBox='0 0 24 28'%3E%3Ccircle cx='12' cy='18' r='5' fill='%23FB923C'/%3E%3Ccircle cx='6' cy='10' r='3' fill='%23FB923C'/%3E%3Ccircle cx='12' cy='5' r='3' fill='%23FB923C'/%3E%3Ccircle cx='18' cy='10' r='3' fill='%23FB923C'/%3E%3C/svg%3E") 12 18, pointer;
+  }
+
+  /* Soft, bouncy transitions for everything */
+  * {
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+@layer utilities {
+  @keyframes tail-sway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(12deg); }
+  }
+
+  @keyframes paw-stretch {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    30% { transform: translateY(-8px) rotate(-5deg); }
+    60% { transform: translateY(-4px) rotate(3deg); }
+  }
+
+  @keyframes ear-wiggle {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.08); }
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+  }
+}

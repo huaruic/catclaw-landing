@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "features": "功能",
+    "privacy": "隐私",
+    "openSource": "开源",
+    "download": "下载"
+  },
+  "hero": {
+    "badge": "零配置本地 AI",
+    "title": "运行 AI。",
+    "titleHighlight": "隐私",
+    "desc": "CatClaw 是本地 AI 代理的温馨桌面家园。无需 Docker，无需复杂配置——下载即用，完全隐私。",
+    "download": "下载 macOS 版",
+    "github": "在 GitHub 查看",
+    "tagPrivacy": "隐私优先",
+    "tagSetup": "零配置"
+  },
+  "features": {
+    "heading": "为什么选择 Cat",
+    "headingHighlight": "Claw",
+    "sub": "一只好奇的猫所需要的一切，都在一个温馨的应用里。",
+    "zeroSetup": {
+      "title": "零配置",
+      "desc": "内置 Node.js 和 OpenClaw 运行时。下载、打开、搞定——不需要 Docker，不需要折腾终端。"
+    },
+    "privacy": {
+      "title": "隐私优先",
+      "desc": "所有 AI 在你的设备上运行。你的对话、你的模型、你的数据——绝不外传。"
+    },
+    "skills": {
+      "title": "技能生态",
+      "desc": "像从篮子里挑玩具一样激活技能和代理。一个为认真 AI 工作打造的猫系 UI。"
+    }
+  },
+  "privacy": {
+    "heading": "你的数据留在",
+    "headingHighlight": "盒子里",
+    "desc": "CatClaw 让一切保持本地。没有中间服务器，没有数据采集——只有你和你的 AI，安全地蜷缩在家。",
+    "point1": "所有 AI 处理都在你的设备上完成",
+    "point2": "无遥测、无追踪、无云端调用",
+    "point3": "完全开源——你可以审查每一行代码"
+  },
+  "opensource": {
+    "heading": "在",
+    "headingHighlight": "开放",
+    "desc": "CatClaw 自豪地开源。查看代码、贡献功能，或 fork 你自己的温馨角落。",
+    "github": "在 GitHub 查看",
+    "docs": "阅读文档"
+  },
+  "footer": {
+    "madeWith": "用",
+    "andCatnip": "和猫薄荷制作。"
+  }
+}
