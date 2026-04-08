@@ -6,7 +6,8 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { PawCursorTrail } from './components/PawCursorTrail';
 import { PuffyButton } from './components/ui/PuffyButton';
-import { BoxCat, ShieldPaw, YarnBall, SleepingCat, PawLogo } from './components/ui/CatIcons';
+import { BoxCat, ShieldPaw, YarnBall, PawLogo } from './components/ui/CatIcons';
+import sleepSvg from './assets/sleep.svg';
 
 function App() {
   const { t } = useTranslation();
@@ -179,7 +180,7 @@ function App() {
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 >
-                  <SleepingCat className="w-48 h-48 text-cat-orange" />
+                  <img src={sleepSvg} alt="" className="w-48 h-48 object-contain" />
                 </motion.div>
                 {/* Little lock icon on the box */}
                 <div className="absolute -top-4 -right-4 w-10 h-10 bg-cat-surface rounded-xl shadow-cozy flex items-center justify-center transition-colors">
@@ -274,7 +275,7 @@ function App() {
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: 'spring', stiffness: 200 }}
             >
-              <SleepingCat className="w-64 h-64 text-cat-orange mb-6" />
+              <img src={sleepSvg} alt="" className="w-64 h-64 object-contain mb-6" />
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 10 }}

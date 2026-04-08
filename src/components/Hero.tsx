@@ -1,24 +1,12 @@
-import React, { useRef } from 'react';
-import { motion, useAnimationControls } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Download, ShieldCheck, Zap, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { PuffyButton } from './ui/PuffyButton';
-import { PawLogo, PeekingCat, ReachingPaw, CatTail } from './ui/CatIcons';
+import { AppMockup } from './AppMockup';
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const tailControls = useAnimationControls();
-  const isWhipping = useRef(false);
-
-  const handleTailClick = async () => {
-    if (isWhipping.current) return;
-    isWhipping.current = true;
-    await tailControls.start({
-      rotate: [0, 45, -30, 15, 0],
-      transition: { duration: 0.5, ease: 'easeInOut' },
-    });
-    isWhipping.current = false;
-  };
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-6 overflow-hidden">
@@ -98,37 +86,8 @@ export const Hero: React.FC = () => {
           transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
           className="flex-1 relative"
         >
-          {/* Mockup Frame */}
-          <div className="relative z-10 p-4 bg-cat-surface rounded-[3rem] shadow-cozy border-b-8 border-cat-border transition-colors">
-            <div className="aspect-[4/3] bg-cat-surface-alt rounded-[2.5rem] overflow-hidden border border-cat-border/50 flex items-center justify-center p-8 text-center group relative transition-colors">
-              <div className="p-8">
-                <div className="w-20 h-20 bg-cat-orange rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <PawLogo className="text-white w-10 h-10" />
-                </div>
-                <div className="h-4 w-48 bg-cat-border rounded-full mx-auto mb-4" />
-                <div className="h-4 w-32 bg-cat-border rounded-full mx-auto" />
-              </div>
-
-              {/* Little Cat Ears Peeking */}
-              <div className="absolute -top-[1px] right-12 w-24 h-12 text-cat-orange pointer-events-none drop-shadow-sm animate-ear-wiggle origin-bottom">
-                <PeekingCat className="w-full h-full" />
-              </div>
-            </div>
-          </div>
-
-          {/* Cat Tail */}
-          <motion.div
-            animate={tailControls}
-            onClick={handleTailClick}
-            className="absolute top-1/3 -right-8 z-0 w-16 h-32 text-cat-orange origin-top cursor-pointer animate-tail-sway"
-          >
-            <CatTail className="w-full h-full drop-shadow-md" />
-          </motion.div>
-
-          {/* Paws on the screen */}
-          <div className="absolute -bottom-10 -left-10 z-20 w-28 h-28 text-cat-orange flex items-center justify-center animate-paw-stretch group cursor-pointer drop-shadow-xl">
-            <ReachingPaw className="w-full h-full group-hover:scale-110 transition-transform" />
-          </div>
+          {/* App Mockup */}
+          <AppMockup />
         </motion.div>
       </div>
     </section>
