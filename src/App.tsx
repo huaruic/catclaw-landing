@@ -251,11 +251,15 @@ function App() {
             <a href="#open-source" className="hover:text-cat-orange transition-colors">{t('nav.openSource')}</a>
           </div>
 
-          <p className="text-cat-muted font-bold text-sm flex items-center gap-1.5">
-            {t('footer.madeWith')}
-            <PawLogo className="w-3.5 h-3.5 text-cat-orange inline-block" />
-            {t('footer.andCatnip')} &copy; 2026
-          </p>
+          <div className="text-cat-muted font-bold text-sm flex flex-col md:flex-row items-center gap-1.5 md:gap-3">
+            <p className="flex items-center gap-1.5">
+              {t('footer.madeWith')}
+              <PawLogo className="w-3.5 h-3.5 text-cat-orange inline-block" />
+              {t('footer.andCatnip')} &copy; 2026
+            </p>
+            <span className="hidden md:inline text-cat-border/50">•</span>
+            <p>{t('footer.designsBy')}</p>
+          </div>
         </div>
       </footer>
 

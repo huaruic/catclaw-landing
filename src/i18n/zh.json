@@ -10,7 +10,9 @@
     "title": "运行 AI。",
     "titleHighlight": "隐私",
     "desc": "CatClaw 是本地 AI 代理的温馨桌面家园。无需 Docker，无需复杂配置——下载即用，完全隐私。",
-    "download": "下载 macOS 版",
+    "downloadMac": "下载 macOS 版",
+    "downloadWin": "下载 Windows 版",
+    "alsoAvailableFor": "同时支持",
     "github": "在 GitHub 查看",
     "tagPrivacy": "隐私优先",
     "tagSetup": "零配置"
@@ -49,6 +51,7 @@
   },
   "footer": {
     "madeWith": "用",
-    "andCatnip": "和猫薄荷制作。"
+    "andCatnip": "和猫薄荷制作。",
+    "designsBy": "由 Ernest 设计"
   }
 }

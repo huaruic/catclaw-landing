@@ -15,9 +15,12 @@ const OFFSET = 8;
 
 function drawPaw(ctx: CanvasRenderingContext2D, x: number, y: number, rotation: number, opacity: number, dpr: number, pawColor: string) {
   ctx.save();
-  ctx.globalAlpha = opacity * 0.25;
+  ctx.globalAlpha = opacity * 0.4;
   ctx.translate(x * dpr, y * dpr);
   ctx.rotate(rotation);
+  
+  const scale = 0.5 + (opacity * 0.5);
+  ctx.scale(scale, scale);
   const s = PAW_SIZE * dpr;
 
   ctx.fillStyle = pawColor;

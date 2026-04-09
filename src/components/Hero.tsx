@@ -1,12 +1,29 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Download, ShieldCheck, Zap, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { PuffyButton } from './ui/PuffyButton';
 import { AppMockup } from './AppMockup';
 
+const MAC_DMG = 'https://github.com/huaruic/catclaw/releases/download/v0.2.0-alpha/CatClaw-1.0.0-arm64.dmg'
+const WIN_EXE = 'https://github.com/huaruic/catclaw/releases/download/v1.0.0-win-test/CatClaw.Setup.1.0.0.exe'
+
+const defaultIsMac = /Mac|iPhone|iPad/.test(navigator.userAgent)
+
+type Platform = 'mac' | 'win'
+
+const platforms: Record<Platform, { url: string; labelKey: string }> = {
+  mac: { url: MAC_DMG, labelKey: 'hero.downloadMac' },
+  win: { url: WIN_EXE, labelKey: 'hero.downloadWin' },
+}
+
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
+  const [platform, setPlatform] = useState<Platform>(defaultIsMac ? 'mac' : 'win')
+
+  const current = platforms[platform]
+  const otherPlatform: Platform = platform === 'mac' ? 'win' : 'mac'
+  const otherLabel = otherPlatform === 'mac' ? 'macOS' : 'Windows'
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-6 overflow-hidden">
@@ -48,20 +65,72 @@ export const Hero: React.FC = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5"
+            className="flex flex-col sm:flex-row items-center sm:items-end justify-center lg:justify-start gap-5"
           >
-            <a href="https://github.com/huaruic/catclaw/releases/download/v0.2.0-alpha/CatClaw-1.0.0-arm64.dmg">
-              <PuffyButton size="xl" className="gap-3 group">
-                <Download className="w-6 h-6 group-hover:scale-125 transition-transform" />
-                {t('hero.download')}
-              </PuffyButton>
-            </a>
-            <a href="https://github.com/huaruic/catclaw" target="_blank" rel="noopener noreferrer">
-              <PuffyButton variant="secondary" size="xl">
+            <div className="flex flex-col items-center gap-2">
+              <div className="inline-flex items-center rounded-full bg-cat-surface border border-cat-border p-1 mb-1">
+                <button
+                  onClick={() => setPlatform('mac')}
+                  className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
+                    platform === 'mac'
+                      ? 'bg-cat-orange text-white shadow-sm'
+                      : 'text-cat-muted hover:text-cat-fg'
+                  }`}
+                >
+                  macOS
+                </button>
+                <button
+                  onClick={() => setPlatform('win')}
+                  className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
+                    platform === 'win'
+                      ? 'bg-cat-orange text-white shadow-sm'
+                      : 'text-cat-muted hover:text-cat-fg'
+                  }`}
+                >
+                  Windows
+                </button>
+              </div>
+              <div className="relative w-[280px] sm:w-[320px] h-16">
+                <a href={current.url} className="block w-full h-full">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={platform}
+                      initial={{ y: 4, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -4, opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute inset-0 flex justify-center"
+                    >
+                      <PuffyButton size="xl" className="gap-3 group w-full h-full whitespace-nowrap">
+                        <Download className="w-6 h-6 group-hover:scale-125 transition-transform shrink-0" />
+                        {t(current.labelKey)}
+                      </PuffyButton>
+                    </motion.div>
+                  </AnimatePresence>
+                </a>
+              </div>
+            </div>
+            <a href="https://github.com/huaruic/catclaw" target="_blank" rel="noopener noreferrer" className="h-16">
+              <PuffyButton variant="secondary" size="xl" className="h-full px-8 whitespace-nowrap">
                 {t('hero.github')}
               </PuffyButton>
             </a>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="mt-4 text-sm text-cat-muted font-bold text-center lg:text-left"
+          >
+            {t('hero.alsoAvailableFor')}{' '}
+            <button
+              onClick={() => setPlatform(otherPlatform)}
+              className="underline underline-offset-4 decoration-cat-orange/30 hover:text-cat-orange transition-colors cursor-pointer"
+            >
+              {otherLabel}
+            </button>
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}

@@ -10,7 +10,9 @@
     "title": "Run AI.",
     "titleHighlight": "Private",
     "desc": "CatClaw is a cozy desktop home for local AI agents. No Docker, no complex configs—just download and start chatting with full privacy.",
-    "download": "Download for macOS",
+    "downloadMac": "Download for macOS",
+    "downloadWin": "Download for Windows",
+    "alsoAvailableFor": "Also available for",
     "github": "View on GitHub",
     "tagPrivacy": "Privacy First",
     "tagSetup": "Zero Setup"
@@ -49,6 +51,7 @@
   },
   "footer": {
     "madeWith": "Made with",
-    "andCatnip": "and catnip."
+    "andCatnip": "and catnip.",
+    "designsBy": "Designs by Ernest"
   }
 }
