@@ -92,18 +92,18 @@ export const AppMockup: React.FC = () => {
   const isChat = isChatLoading || isChatReply;
 
   return (
-    <div className="w-full rounded-2xl overflow-hidden shadow-cozy border border-[hsl(20,6%,22%)] bg-[hsl(20,6%,10%)] text-[hsl(30,15%,92%)] text-[10px] leading-tight select-none">
+    <div className="w-full rounded-2xl overflow-hidden shadow-cozy border border-cat-border bg-cat-bg text-cat-fg text-[10px] leading-tight select-none transition-colors duration-300">
       {/* macOS Title Bar */}
-      <div className="flex items-center gap-1.5 px-3 py-2 bg-[hsl(20,6%,12%)] border-b border-[hsl(20,6%,18%)]">
+      <div className="flex items-center gap-1.5 px-3 py-2 bg-cat-surface border-b border-cat-border transition-colors duration-300">
         <div className="w-2 h-2 rounded-full bg-[#ff5f57]" />
         <div className="w-2 h-2 rounded-full bg-[#febc2e]" />
         <div className="w-2 h-2 rounded-full bg-[#28c840]" />
-        <span className="ml-auto text-[9px] font-bold text-[hsl(30,10%,50%)]">CatClaw</span>
+        <span className="ml-auto text-[9px] font-bold text-cat-muted transition-colors duration-300">CatClaw</span>
       </div>
 
       <div className="flex" style={{ height: 260 }}>
         {/* Sidebar */}
-        <div className="w-[72px] shrink-0 bg-[hsl(20,6%,11%)] border-r border-[hsl(20,6%,18%)] flex flex-col py-2 px-1.5">
+        <div className="w-[72px] shrink-0 bg-cat-surface-alt border-r border-cat-border flex flex-col py-2 px-1.5 transition-colors duration-300">
           {/* App Logo */}
           <div className="flex items-center gap-1 px-1 mb-2">
             <div className="w-4 h-4 rounded bg-cat-orange flex items-center justify-center">
@@ -123,7 +123,7 @@ export const AppMockup: React.FC = () => {
             {sidebarItems.map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex items-center gap-1 px-1 py-0.5 rounded text-[hsl(30,10%,60%)] hover:bg-[hsl(20,6%,16%)] transition-colors"
+                className="flex items-center gap-1 px-1 py-0.5 rounded text-cat-muted hover:bg-cat-surface transition-colors duration-300"
               >
                 <Icon className="w-2.5 h-2.5" />
                 <span className="text-[7px]">{label}</span>
@@ -132,18 +132,18 @@ export const AppMockup: React.FC = () => {
           </div>
 
           {/* Recents */}
-          <div className="mt-2 pt-1.5 border-t border-[hsl(20,6%,18%)]">
-            <span className="text-[6px] font-bold text-[hsl(30,10%,40%)] px-1 uppercase tracking-wider">
+          <div className="mt-2 pt-1.5 border-t border-cat-border transition-colors duration-300">
+            <span className="text-[6px] font-bold text-cat-muted/70 px-1 uppercase tracking-wider transition-colors duration-300">
               Recents
             </span>
             <div className="flex flex-col gap-0.5 mt-1">
               {recentChats.map((chat, i) => (
                 <div
                   key={chat}
-                  className={`text-[7px] px-1 py-0.5 rounded truncate ${
+                  className={`text-[7px] px-1 py-0.5 rounded truncate transition-colors duration-300 ${
                     i === 0 && isChat
                       ? 'text-cat-orange bg-cat-orange/10'
-                      : 'text-[hsl(30,10%,55%)]'
+                      : 'text-cat-muted'
                   }`}
                 >
                   {chat}
@@ -153,14 +153,14 @@ export const AppMockup: React.FC = () => {
           </div>
 
           {/* Settings at bottom */}
-          <div className="mt-auto flex items-center gap-1 px-1 text-[hsl(30,10%,50%)]">
+          <div className="mt-auto flex items-center gap-1 px-1 text-cat-muted transition-colors duration-300">
             <Settings className="w-2.5 h-2.5" />
             <span className="text-[7px]">Settings</span>
           </div>
         </div>
 
         {/* Main Content Area */}
-        <div className="flex-1 flex flex-col min-w-0 bg-[hsl(20,6%,10%)]">
+        <div className="flex-1 flex flex-col min-w-0 bg-cat-bg transition-colors duration-300">
           {/* Content Area */}
           <div className="flex-1 overflow-hidden relative">
             <AnimatePresence mode="wait">
@@ -178,21 +178,21 @@ export const AppMockup: React.FC = () => {
                   <motion.div
                     animate={{ y: [0, -2, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                    className="w-16 h-12 mb-2"
+                    className="w-16 h-12 mb-2 opacity-80"
                   >
                     <img src={sleepSvg} alt="" className="w-full h-full object-contain" />
                   </motion.div>
-                  <span className="text-sm font-black mb-3">Good morning</span>
+                  <span className="text-sm font-black mb-3 text-cat-fg transition-colors duration-300">Good morning</span>
 
                   {/* Quick Start Cards */}
                   <div className="grid grid-cols-2 gap-1.5 w-full max-w-[200px]">
                     {quickStartCards.map(({ icon: Icon, title }) => (
                       <div
                         key={title}
-                        className="flex items-center gap-1 px-1.5 py-1.5 rounded-md border border-[hsl(20,6%,20%)] bg-[hsl(20,6%,12%)]"
+                        className="flex items-center gap-1 px-1.5 py-1.5 rounded-md border border-cat-border bg-cat-surface transition-colors duration-300"
                       >
                         <Icon className="w-2.5 h-2.5 text-cat-orange shrink-0" />
-                        <span className="text-[7px] truncate">{title}</span>
+                        <span className="text-[7px] truncate text-cat-fg transition-colors duration-300">{title}</span>
                       </div>
                     ))}
                   </div>
@@ -215,10 +215,10 @@ export const AppMockup: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex flex-col items-end mb-2"
                   >
-                    <div className="bg-[hsl(20,10%,20%)] rounded-2xl rounded-br-sm px-2.5 py-1.5 max-w-[60%]">
-                      <span className="text-[10px]">hey</span>
+                    <div className="bg-cat-surface-alt rounded-2xl rounded-br-sm px-2.5 py-1.5 max-w-[60%] transition-colors duration-300">
+                      <span className="text-[10px] text-cat-fg transition-colors duration-300">hey</span>
                     </div>
-                    <span className="text-[6px] text-[hsl(30,10%,40%)] mt-0.5">04:11 AM</span>
+                    <span className="text-[6px] text-cat-muted mt-0.5 transition-colors duration-300">04:11 AM</span>
                   </motion.div>
 
                   {/* AI Loading */}
@@ -234,7 +234,7 @@ export const AppMockup: React.FC = () => {
                       >
                         <PawLogo className="w-3.5 h-3.5 text-cat-orange" />
                       </motion.div>
-                      <span className="text-[8px] text-[hsl(30,10%,50%)] font-mono">1.8s</span>
+                      <span className="text-[8px] text-cat-muted font-mono transition-colors duration-300">1.8s</span>
                     </motion.div>
                   )}
 
@@ -247,7 +247,7 @@ export const AppMockup: React.FC = () => {
                       className="flex flex-col gap-1.5"
                     >
                       {/* Actions badge */}
-                      <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-[hsl(20,6%,14%)] border border-[hsl(20,6%,20%)] w-fit text-[8px] text-[hsl(30,10%,60%)]">
+                      <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-cat-surface border border-cat-border w-fit text-[8px] text-cat-muted transition-colors duration-300">
                         <FileIcon className="w-2.5 h-2.5" />
                         5 actions, 1 message
                         <ChevronDown className="w-2 h-2" />
@@ -255,11 +255,11 @@ export const AppMockup: React.FC = () => {
 
                       {/* Tool call results */}
                       <div className="flex flex-col gap-0.5">
-                        <div className="flex items-center gap-1 px-2 py-0.5 rounded border border-[hsl(20,6%,20%)] text-[7px] text-[hsl(30,10%,55%)]">
+                        <div className="flex items-center gap-1 px-2 py-0.5 rounded border border-cat-border text-[7px] text-cat-muted transition-colors duration-300">
                           <CheckCircle2 className="w-2 h-2 text-green-500" />
                           Finished reading file
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-0.5 rounded border border-[hsl(20,6%,20%)] text-[7px] text-[hsl(30,10%,55%)]">
+                        <div className="flex items-center gap-1 px-2 py-0.5 rounded border border-cat-border text-[7px] text-cat-muted transition-colors duration-300">
                           <CheckCircle2 className="w-2 h-2 text-green-500" />
                           Finished reading file
                         </div>
@@ -270,13 +270,13 @@ export const AppMockup: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="text-[8px] leading-relaxed text-[hsl(30,10%,70%)]"
+                        className="text-[8px] leading-relaxed text-cat-fg transition-colors duration-300"
                       >
                         hey. I just came online, and this workspace is basically a blank slate.
                       </motion.div>
 
                       {/* Time + copy */}
-                      <div className="flex items-center gap-1 text-[7px] text-[hsl(30,10%,40%)]">
+                      <div className="flex items-center gap-1 text-[7px] text-cat-muted transition-colors duration-300">
                         <span className="font-mono">11s</span>
                         <Copy className="w-2 h-2" />
                       </div>
@@ -289,11 +289,11 @@ export const AppMockup: React.FC = () => {
 
           {/* Input Bar (always visible) */}
           <div className="px-2 pb-2">
-            <div className="rounded-xl border border-[hsl(20,6%,20%)] bg-[hsl(20,6%,13%)] px-2 py-1.5">
+            <div className="rounded-xl border border-cat-border bg-cat-surface px-2 py-1.5 transition-colors duration-300">
               {/* Input text */}
-              <div className="text-[9px] text-[hsl(30,10%,40%)] mb-1 min-h-[12px]">
+              <div className="text-[9px] text-cat-muted mb-1 min-h-[12px] transition-colors duration-300">
                 {isTyping ? (
-                  <span className="text-[hsl(30,15%,92%)]">
+                  <span className="text-cat-fg transition-colors duration-300">
                     <TypewriterText text="hey" isActive={isTyping} />
                     <motion.span
                       animate={{ opacity: [1, 0] }}
@@ -309,22 +309,22 @@ export const AppMockup: React.FC = () => {
               </div>
               {/* Toolbar */}
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1.5 text-[hsl(30,10%,45%)]">
+                <div className="flex items-center gap-1.5 text-cat-muted transition-colors duration-300">
                   <Plus className="w-2.5 h-2.5" />
                   <Paperclip className="w-2.5 h-2.5" />
                   <Globe className="w-2.5 h-2.5" />
                   <Mic className="w-2.5 h-2.5" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[7px] text-[hsl(30,10%,50%)] flex items-center gap-0.5">
+                  <span className="text-[7px] text-cat-muted flex items-center gap-0.5 transition-colors duration-300">
                     gpt-5.4
                     <ChevronDown className="w-2 h-2" />
                   </span>
                   <div
-                    className={`w-4 h-4 rounded-full flex items-center justify-center transition-colors ${
+                    className={`w-4 h-4 rounded-full flex items-center justify-center transition-colors duration-300 ${
                       isTyping
                         ? 'bg-cat-orange text-white'
-                        : 'bg-[hsl(20,6%,18%)] text-[hsl(30,10%,45%)]'
+                        : 'bg-cat-border text-cat-muted'
                     }`}
                   >
                     <ArrowUp className="w-2.5 h-2.5" />
