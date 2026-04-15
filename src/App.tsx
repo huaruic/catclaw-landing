@@ -106,7 +106,7 @@ function App() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-black text-cat-fg mb-4">
-              {t('features.heading')}<span className="text-cat-orange">{t('features.headingHighlight')}</span>?
+              {t('features.heading')}<span className="text-cat-orange-dark">{t('features.headingHighlight')}</span>?
             </h2>
             <p className="text-xl text-cat-muted font-medium max-w-lg mx-auto">
               {t('features.sub')}
@@ -144,7 +144,7 @@ function App() {
               className="flex-1"
             >
               <h2 className="text-4xl md:text-5xl font-black text-cat-fg mb-6">
-                {t('privacy.heading')}<br />in Your <span className="text-cat-orange">{t('privacy.headingHighlight')}</span>
+                {t('privacy.heading')}<br />in Your <span className="text-cat-orange-dark">{t('privacy.headingHighlight')}</span>
               </h2>
               <p className="text-lg text-cat-muted font-medium mb-8 max-w-md leading-relaxed">
                 {t('privacy.desc')}
@@ -200,7 +200,7 @@ function App() {
             className="max-w-2xl mx-auto text-center"
           >
             <h2 className="text-4xl md:text-5xl font-black text-cat-fg mb-6">
-              {t('opensource.heading')} <span className="text-cat-orange">{t('opensource.headingHighlight')}</span>
+              {t('opensource.heading')} <span className="text-cat-orange-dark">{t('opensource.headingHighlight')}</span>
             </h2>
             <p className="text-xl text-cat-muted font-medium mb-10 leading-relaxed">
               {t('opensource.desc')}

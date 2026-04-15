@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
             <PawLogo className="text-white w-6 h-6" />
           </motion.div>
           <span className="text-2xl font-black tracking-tight text-cat-fg">
-            Cat<span className="text-cat-orange">Claw</span>
+            Cat<span className="text-cat-orange-dark">Claw</span>
           </span>
         </div>
 
@@ -44,12 +44,14 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={toggleLang}
+            aria-label={i18n.language === 'zh' ? 'Switch to English' : '切换到中文'}
             className="w-9 h-9 rounded-xl bg-cat-surface-alt flex items-center justify-center text-sm font-black text-cat-muted hover:text-cat-orange transition-colors border border-cat-border"
           >
             {i18n.language === 'zh' ? 'EN' : '中'}
           </button>
           <button
             onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             className="w-9 h-9 rounded-xl bg-cat-surface-alt flex items-center justify-center text-cat-muted hover:text-cat-orange transition-colors border border-cat-border"
           >
             {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}

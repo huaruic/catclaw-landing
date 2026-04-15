@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cat-orange/15 text-cat-orange font-bold text-sm mb-8 shadow-sm border border-cat-orange/20"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cat-orange/15 text-cat-orange-dark font-bold text-sm mb-8 shadow-sm border border-cat-orange/20"
           >
             <Sparkles className="w-4 h-4 fill-cat-orange" />
             {t('hero.badge')}
@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
             className="text-6xl md:text-8xl font-black text-cat-fg leading-[0.9] tracking-tighter mb-8"
           >
             {t('hero.title')} <br />
-            Stay <span className="text-cat-orange">{t('hero.titleHighlight')}</span>.
+            Stay <span className="text-cat-orange-dark">{t('hero.titleHighlight')}</span>.
           </motion.h1>
 
           <motion.p

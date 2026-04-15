@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "@fontsource/quicksand";
+@import "@fontsource/quicksand/500.css";
+@import "@fontsource/quicksand/700.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -7,6 +8,7 @@
   --font-sans: "Quicksand", "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --color-cat-orange: var(--raw-cat-orange);
+  --color-cat-orange-dark: var(--raw-cat-orange-dark);
   --color-cat-accent: var(--raw-cat-accent);
   --color-cat-bg: var(--raw-cat-bg);
   --color-cat-fg: var(--raw-cat-fg);
@@ -30,6 +32,7 @@
 @layer base {
   :root {
     --raw-cat-orange: #F97316;
+    --raw-cat-orange-dark: #EA580C;
     --raw-cat-accent: #FB923C;
     --raw-cat-bg: #FFF7ED;
     --raw-cat-fg: #431407;
@@ -41,6 +44,7 @@
   }
 
   .dark {
+    --raw-cat-orange-dark: #FDBA74;
     --raw-cat-bg: hsl(20 6% 10%);
     --raw-cat-fg: hsl(30 15% 92%);
     --raw-cat-surface: hsl(20 6% 13%);
